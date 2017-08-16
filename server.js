@@ -5,7 +5,7 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var ArticleOne = {
+var articleOne = {
     title : 'Article one | Yogesh Pandey',
     heading : 'Article -one',
     date : 'Aug 15 2017',
@@ -18,10 +18,10 @@ var ArticleOne = {
     </p>`
 };
 function createTemplate (data) {
-    var title= data.title;
-    var date= data.date;
-    var heading= data.heading;
-    var content= data.content;
+    var title = data.title;
+    var date = data.date;
+    var heading = data.heading;
+    var content = data.content;
     var htmlTemplate=`
     <!DOCTYPE html>
         <head>
@@ -55,7 +55,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/article-one' ,function (req, res) {
-   res.send(createTemplate(ArticleOne));
+   res.send(createTemplate(articleOne));
 });
 
 app.get('/article-two' ,function (req, res) {
