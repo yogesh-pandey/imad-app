@@ -29,7 +29,7 @@ button.onclick=function(){
         if(request.readyState === XMLHttpRequest.Done){
             //Take Some action 
             if(request.status === 200){
-                var counter= counter+1;
+                var counter= request.responseText;
                 var span =document.getElementById('count');
                 span.innerHTML = counter.toString();
             }
