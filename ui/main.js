@@ -6,6 +6,6 @@ element.innerHTML=("On clicking name Doesn't Change");
 
 //move the image
 var img= document.getElementById('madi');
-img.onlcick=function(){
+img.onlclick=function(){
     img.style.marginLeft = '100px';
 };
