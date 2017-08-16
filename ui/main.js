@@ -18,15 +18,25 @@ img.onclick=function(){
 */
 //counter code
 var button = document.getElementById('counter');
-var counter=0;
+
 button.onclick=function(){
     
-    //make a request to a counter endpoint.
+    //create a request to a counter endpoint.
+    var request =new XMLHttpReques();
     
     //Capture the response and store it in the variable.
-    
-    //Render the variable in the correct span
-    counter= counter+1;
-    var span =document.getElementById('count');
-    span.innerHTML = counter.toString();
+    request.onreadystatechange = function(){
+        if(request.readyState === XMLHttpRequest.Done){
+            //Take Sme action 
+            if(reques.status === 200){
+                ounter= counter+1;
+                var span =document.getElementById('count');
+                span.innerHTML = counter.toString();
+            }
+        }
+        
+    };
+    //Rmake the Request
+    request.open('GET','http://yogeshpandey10oct.imad.hasura-app.io/counter', true);
+    request.send(null);
 };
